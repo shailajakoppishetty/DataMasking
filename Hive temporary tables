@@ -19,5 +19,5 @@ Command: CREATE TEMPORARY FUNCTION mask;
 Insert encoded data into temp table by running udf using following command.
 Insert overwrite local directory '/home/cloudera/firstprg'
 select mask(email)from hive_contact;
-select mask(phone)from hive_account;
+select mask(account_phone)from hive_account;
 select mask(phone)from hive_contact;
