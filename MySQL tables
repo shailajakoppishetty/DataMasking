@@ -1,0 +1,19 @@
+create database original;
+create database masked;
+use original;
+create table account(account_id int(10),account_name varchar(30),account_phone varchar(12));
+create table contact(contact_id int(10),account_id int(10),Firstname varchar(20),Lastname varchar(20),phone varchar(12),email varchar(30));
+//Load data from 2 csv files into the “original” database table’s “account” and “contact”
+respectively by using following commands.
+Command: load data local infile ‘/home/cloudera/Desktop/Account.csv’
+ > into table account
+ > fields terminated by ‘,’
+ > lines terminated by ‘\n’;
+ 
+ Command: load data local infile ‘/home/cloudera/Desktop/Contact.csv’
+ > into table contact
+ > fields terminated by ‘,’
+ > lines terminated by ‘\n’;
+ 
+ Command: delete from account where account_id=0;
+Command: delete from contact where contact_id=0;

@@ -1,5 +1,0 @@
-create database original;
-create database masked;
-use original;
-create table account(account_id int(10),account_name varchar(30),account_phone varchar(12));
-create table contact(contact_id int(10),account_id int(10),Firstname varchar(20),Lastname varchar(20),phone varchar(12),email varchar(30));
