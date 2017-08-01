@@ -1,0 +1,17 @@
+ Create hive schema with “hiveoriginal_sc “name as shown below.
+Command: create schema hiveoriginal_sc
+ location ‘/hivedatabase/’; 
+ Command: use hiveoriginal_sc;
+   Create two tables in hiveoriginal_sc by using following commands.
+Command:
+create external table hive_account(account_id int,account_name string,account_phone string)
+> row format delimeted
+> fields terminated by ‘\t’
+> location ‘/hivedatabase/account/’;
+
+Command:
+create external table hive_contact(account_id int,contact_id int,first_name string,last_name string,phone string,email string)
+> row format delimeted
+> fields terminated by ‘\t’
+> location ‘/hivedatabase/account/’;
+
