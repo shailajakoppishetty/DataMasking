@@ -1,0 +1,23 @@
+ create some temporary tables in hive by using following
+commands.
+Command: create table temp (phone string)
+ > row format delimited
+ > fields terminated by ‘\t’;
+Command: create table temp1 (phone string)
+ > row format delimited
+ > fields terminated by ‘\t’;
+Command: create table temp (email string)
+ > row format delimited
+ > fields terminated by ‘\t’;
+Step 2: Insert encoded data into the temporary tables by running hive udf
+i. Add udfnum.jar file to hive by using following command
+Command: ADD JAR /home/cloudera/workspace /firtprog.jar;
+
+Create temporary function with name “MaskNum” by using following command
+Command: CREATE TEMPORARY FUNCTION mask;
+
+Insert encoded data into temp table by running udf using following command.
+Insert overwrite local directory '/home/cloudera/firstprg'
+select mask(email)from hive_contact;
+select mask(phone)from hive_account;
+select mask(phone)from hive_contact;
