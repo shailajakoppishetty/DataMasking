@@ -1,0 +1,18 @@
+Importing “account” table data from mysql into hive_account table by using sqoop import as
+shown below.
+Command: sqoop import --connect jdbc:mysql://quickstart.cloudera/original \
+ > --username root --password cloudera
+ > --table account
+ > --hive-import
+ > --hive-table hiveoriginal_sc.hive_account -m1
+ > --fields-terminated-by ‘\t’
+ > --target-dir= ’/hivedatabase/account’ --direct;
+ 
+ 
+ Command: sqoop import --connect jdbc:mysql://quickstart.cloudera/original \
+ > --username root --password cloudera
+ > --table contact
+ > --hive-import
+ > --hive-table hiveoriginal_sc.hive_contact -m1
+ > --fields-terminated-by ‘\t’
+ > --target-dir= ’/hivedatabase/contact’ --direct;
